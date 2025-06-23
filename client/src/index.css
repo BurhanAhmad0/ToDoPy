@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "Poppins";
+    src: local("Poppins-Regular"),
+        url('./assets/fonts/Poppins/Poppins-Regular.ttf')
+}
+
+@theme {
+
+    --font-primary: "Poppins", "sans-serif";
+
+    --color-btn: #76DE37;
+    --color-primary-background: #C4C4C4;
+    --color-secondary-background: #FFF9F9;
+    --color-sidebar-background: #F4F4F4;
+    --color-search-background: #EBEBEB;
+
+    --spacing-tasks-List: 573px;
+
+    --breakpoint-xsm: 400px;
+}
+
+* {
+    @apply font-primary
+}
+
+/* Container styles */
+.custom-calendar-wrapper {
+    padding: 20px;
+    background-color: white;
+}
+
+/* Title */
+.calendar-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Toolbar (Day, Week, Month) */
+.rbc-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.rbc-toolbar-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.rbc-btn-group button {
+    background-color: #f3f4f6;
+    border: none;
+    margin: 0 4px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.rbc-btn-group button:hover {
+    background-color: #e5e7eb;
+}
+
+.rbc-btn-group button.rbc-active {
+    background-color: #d1d5db;
+    font-weight: 600;
+}
+
+/* Time gutter */
+.rbc-timeslot-group {
+    border-color: #e6ebe5;
+}
+
+/* Event styles */
+.rbc-event {
+    border: none;
+    border-radius: 10px;
+    padding: 4px 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #111827 !important;
+    background-color: #dbfee4 !important;
+    /* Light blue */
+}
+
+.rbc-event.red-event {
+    background-color: #fecaca !important;
+    /* Light red */
+}
+
+/* Today background highlight */
+.rbc-today {
+    background-color: #f0f9ff !important;
+}
+
+@media (width <=1024px) {
+    .bgImage {
+        background-image: url('../public/assets/heroImage.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+}
