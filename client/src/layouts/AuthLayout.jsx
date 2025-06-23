@@ -1,6 +1,8 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
+import HeroImage from '../assets/icons/heroImage.png'
+
 const AuthLayout = () => {
     return (
         <section className="authLayout bgImage flex items-center lg:items-start p-6 sm:p-10 bg-primary-background gap-5 min-h-screen">
@@ -8,7 +10,7 @@ const AuthLayout = () => {
             <div className="leftSection w-full md:w-1/2 hidden lg:flex items-center justify-center">
                 <img
                     loading="lazy"
-                    src="../src/assets/icons/heroImage.png"
+                    src={HeroImage}
                     alt="Hero"
                     className="w-full h-auto object-contain max-h-[400px] md:max-h-full"
                 />

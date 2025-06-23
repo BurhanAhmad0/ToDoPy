@@ -7,6 +7,18 @@ import { ListReducer } from '../reducers/ListReducer.jsx'
 import toast from 'react-hot-toast'
 import { useAuth } from '../context/AuthContext.jsx'
 
+// 🔁 Fixed Icon Imports
+import HamburgerIcon from '../assets/icons/hamburger.svg'
+import SearchIcon from '../assets/icons/search.svg'
+import UpcomingIcon from '../assets/icons/upcoming.svg'
+import TasksIcon from '../assets/icons/tasks.svg'
+import CalenderIcon from '../assets/icons/calender.svg'
+import StickyNoteIcon from '../assets/icons/stickyNote.svg'
+import AddIcon from '../assets/icons/add.svg'
+import SettingsIcon from '../assets/icons/settings.svg'
+import SignoutIcon from '../assets/icons/signout.svg'
+
+// Component...
 import CreateListModal from './CreateListModal.jsx'
 
 const Sidebar = ({ ExpandSidebar, setExpandSidebar, IsModbileSideberOpen, setIsMobileSideberOpen }) => {
@@ -99,26 +111,26 @@ const Sidebar = ({ ExpandSidebar, setExpandSidebar, IsModbileSideberOpen, setIsM
       <aside className={`hidden lg:block lg:${ExpandSidebar ? 'w-1/4' : 'w-28'} rounded-4xl bg-sidebar-background p-8 transition-all duration-300`}>
         <div className="head flex justify-between">
           <h2 className={`text-2xl font-extrabold ${ExpandSidebar ? 'block' : 'hidden'} transition-all duration-300`}><Link to={`/${user?.firstName.toLowerCase()}`}>Menu</Link></h2>
-          <img onClick={() => setExpandSidebar(!ExpandSidebar)} className='invert-100 cursor-pointer' loading='lazy' src="../src/assets/icons/hamburger.svg" alt="" />
+          <img onClick={() => setExpandSidebar(!ExpandSidebar)} className='invert-100 cursor-pointer' loading='lazy' src={HamburgerIcon} alt="" />
         </div>
 
         <div className={`search relative ${ExpandSidebar ? 'block' : 'hidden'}`}>
           <input className='bg-search-background w-full rounded-4xl px-10 py-2 mt-3 outline-none focus:ring-offset-0 focus:ring-2 focus:ring-green-400 transition-all' placeholder='Search...' type="search" />
-          <img className='absolute left-2 top-5' loading='lazy' src="../src/assets/icons/search.svg" alt="" />
+          <img className='absolute left-2 top-5' loading='lazy' src={SearchIcon} alt="" />
         </div>
 
         <div className="tasks mt-7 h-56">
           <h2 className={`text-lg font-extrabold ${ExpandSidebar ? 'block' : 'hidden'} transition-all duration-300`}>Tasks</h2>
 
-          <Link to={`/${user?.firstName.toLowerCase()}/upcoming`} className={` ${ExpandSidebar ? 'flex' : 'hidden'} gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/upcoming`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src="../src/assets/icons/upcoming.svg" alt="" /> Upcoming </Link>
-          <Link to={`/${user?.firstName.toLowerCase()}/tasks`} className={` ${ExpandSidebar ? 'flex' : 'hidden'} gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/tasks`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src="../src/assets/icons/tasks.svg" alt="" /> Tasks </Link>
-          <Link to={`/${user?.firstName.toLowerCase()}/calender`} className={` ${ExpandSidebar ? 'flex' : 'hidden'} gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/calender`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src="../src/assets/icons/calender.svg" alt="" /> Calender </Link>
-          <Link to={`/${user?.firstName.toLowerCase()}/notes`} className={` ${ExpandSidebar ? 'flex' : 'hidden'} gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/notes`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src="../src/assets/icons/stickyNote.svg" alt="" /> Sticky Notes </Link>
+          <Link to={`/${user?.firstName.toLowerCase()}/upcoming`} className={` ${ExpandSidebar ? 'flex' : 'hidden'} gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/upcoming`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src={UpcomingIcon} alt="" /> Upcoming </Link>
+          <Link to={`/${user?.firstName.toLowerCase()}/tasks`} className={` ${ExpandSidebar ? 'flex' : 'hidden'} gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/tasks`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src={TasksIcon} alt="" /> Tasks </Link>
+          <Link to={`/${user?.firstName.toLowerCase()}/calender`} className={` ${ExpandSidebar ? 'flex' : 'hidden'} gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/calender`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src={CalenderIcon} alt="" /> Calender </Link>
+          <Link to={`/${user?.firstName.toLowerCase()}/notes`} className={` ${ExpandSidebar ? 'flex' : 'hidden'} gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/notes`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src={StickyNoteIcon} alt="" /> Sticky Notes </Link>
 
-          <Link to={`/${user?.firstName.toLowerCase()}/upcoming`} className={` ${ExpandSidebar ? 'hidden' : 'flex'} gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/upcoming`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src="../src/assets/icons/upcoming.svg" alt="" /> </Link>
-          <Link to={`/${user?.firstName.toLowerCase()}/tasks`} className={` ${ExpandSidebar ? 'hidden' : 'flex'} gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/tasks`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src="../src/assets/icons/tasks.svg" alt="" /> </Link>
-          <Link to={`/${user?.firstName.toLowerCase()}/calender`} className={` ${ExpandSidebar ? 'hidden' : 'flex'} gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/calender`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src="../src/assets/icons/calender.svg" alt="" /> </Link>
-          <Link to={`/${user?.firstName.toLowerCase()}/notes`} className={` ${ExpandSidebar ? 'hidden' : 'flex'} gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/notes`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src="../src/assets/icons/stickyNote.svg" alt="" /> </Link>
+          <Link to={`/${user?.firstName.toLowerCase()}/upcoming`} className={` ${ExpandSidebar ? 'hidden' : 'flex'} gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/upcoming`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src={UpcomingIcon} alt="" /> </Link>
+          <Link to={`/${user?.firstName.toLowerCase()}/tasks`} className={` ${ExpandSidebar ? 'hidden' : 'flex'} gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/tasks`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src={TasksIcon} alt="" /> </Link>
+          <Link to={`/${user?.firstName.toLowerCase()}/calender`} className={` ${ExpandSidebar ? 'hidden' : 'flex'} gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/calender`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src={CalenderIcon} alt="" /> </Link>
+          <Link to={`/${user?.firstName.toLowerCase()}/notes`} className={` ${ExpandSidebar ? 'hidden' : 'flex'} gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/notes`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src={StickyNoteIcon} alt="" /> </Link>
 
         </div>
 
@@ -146,17 +158,17 @@ const Sidebar = ({ ExpandSidebar, setExpandSidebar, IsModbileSideberOpen, setIsM
             ))}
           </div>
 
-          <button title='Create List' onClick={() => setCreateListModal(true)} className={`flex gap-2 mt-3 cursor-pointer ${ExpandSidebar ? 'block' : 'hidden'} transition-all duration-300`}> <img loading='lazy' src="../src/assets/icons/add.svg" alt="" /> Add New List</button>
-          <button title='Create List' onClick={() => setCreateListModal(true)} className={`flex gap-2 mt-3 cursor-pointer ${ExpandSidebar ? 'hidden' : 'block'} transition-all duration-300`}> <img loading='lazy' src="../src/assets/icons/add.svg" alt="" /> </button>
+          <button title='Create List' onClick={() => setCreateListModal(true)} className={`flex gap-2 mt-3 cursor-pointer ${ExpandSidebar ? 'block' : 'hidden'} transition-all duration-300`}> <img loading='lazy' src={AddIcon} alt="" /> Add New List</button>
+          <button title='Create List' onClick={() => setCreateListModal(true)} className={`flex gap-2 mt-3 cursor-pointer ${ExpandSidebar ? 'hidden' : 'block'} transition-all duration-300`}> <img loading='lazy' src={AddIcon} alt="" /> </button>
 
         </div>
 
         <div className="btns mt-7">
-          <button className={`${(ExpandSidebar) ? 'flex' : 'hidden'} gap-2 mt-3 cursor-pointer`}> <img loading='lazy' src="../src/assets/icons/settings.svg" alt="" /> Settings</button>
-          <button title='sign out' onClick={() => handleLogout()} className={`${(ExpandSidebar) ? 'flex' : 'hidden'} gap-2 mt-3 cursor-pointer`}> <img loading='lazy' src="../src/assets/icons/signout.svg" alt="" /> Sign out</button>
+          <button className={`${(ExpandSidebar) ? 'flex' : 'hidden'} gap-2 mt-3 cursor-pointer`}> <img loading='lazy' src={SettingsIcon} alt="" /> Settings</button>
+          <button title='sign out' onClick={() => handleLogout()} className={`${(ExpandSidebar) ? 'flex' : 'hidden'} gap-2 mt-3 cursor-pointer`}> <img loading='lazy' src={SignoutIcon} alt="" /> Sign out</button>
 
-          <button className={`${(ExpandSidebar) ? 'hidden' : 'flex'} gap-2 mt-3 cursor-pointer`}> <img loading='lazy' src="../src/assets/icons/settings.svg" alt="" /> </button>
-          <button title='sign out' onClick={() => handleLogout()} className={`${(ExpandSidebar) ? 'hidden' : 'flex'} gap-2 mt-3 cursor-pointer`}> <img loading='lazy' src="../src/assets/icons/signout.svg" alt="" /> </button>
+          <button className={`${(ExpandSidebar) ? 'hidden' : 'flex'} gap-2 mt-3 cursor-pointer`}> <img loading='lazy' src={SettingsIcon} alt="" /> </button>
+          <button title='sign out' onClick={() => handleLogout()} className={`${(ExpandSidebar) ? 'hidden' : 'flex'} gap-2 mt-3 cursor-pointer`}> <img loading='lazy' src={SignoutIcon} alt="" /> </button>
         </div>
 
         {createListModal && (
@@ -171,21 +183,21 @@ const Sidebar = ({ ExpandSidebar, setExpandSidebar, IsModbileSideberOpen, setIsM
 
         <div className="head flex justify-between">
           <h2 className={`text-2xl font-extrabold block transition-all duration-300`}><Link to={`/${user?.firstName.toLowerCase()}`}>Menu</Link></h2>
-          <img onClick={() => setIsMobileSideberOpen(false)} className='invert-100 cursor-pointer' loading='lazy' src="../src/assets/icons/hamburger.svg" alt="" />
+          <img onClick={() => setIsMobileSideberOpen(false)} className='invert-100 cursor-pointer' loading='lazy' src={HamburgerIcon} alt="" />
         </div>
 
         <div className={`search relative block`}>
           <input className='bg-search-background w-full rounded-4xl px-10 py-2 mt-3 outline-none focus:ring-offset-0 focus:ring-2 focus:ring-green-400 transition-all' placeholder='Search...' type="search" />
-          <img className='absolute left-2 top-5' loading='lazy' src="../src/assets/icons/search.svg" alt="" />
+          <img className='absolute left-2 top-5' loading='lazy' src={SearchIcon} alt="" />
         </div>
 
         <div className="tasks mt-7 h-56">
           <h2 className={`text-lg font-extrabold block transition-all duration-300`}>Tasks</h2>
 
-          <Link to={`/${user?.firstName.toLowerCase()}/upcoming`} className={`flex gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/upcoming`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src="../src/assets/icons/upcoming.svg" alt="" /> Upcoming </Link>
-          <Link to={`/${user?.firstName.toLowerCase()}/tasks`} className={`flex gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/tasks`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src="../src/assets/icons/tasks.svg" alt="" /> Tasks </Link>
-          <Link to={`/${user?.firstName.toLowerCase()}/calender`} className={`flex gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/calender`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src="../src/assets/icons/calender.svg" alt="" /> Calender </Link>
-          <Link to={`/${user?.firstName.toLowerCase()}/notes`} className={`flex gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/notes`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src="../src/assets/icons/stickyNote.svg" alt="" /> Sticky Notes </Link>
+          <Link to={`/${user?.firstName.toLowerCase()}/upcoming`} className={`flex gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/upcoming`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src={UpcomingIcon} alt="" /> Upcoming </Link>
+          <Link to={`/${user?.firstName.toLowerCase()}/tasks`} className={`flex gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/tasks`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src={TasksIcon} alt="" /> Tasks </Link>
+          <Link to={`/${user?.firstName.toLowerCase()}/calender`} className={`flex gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/calender`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src={CalenderIcon} alt="" /> Calender </Link>
+          <Link to={`/${user?.firstName.toLowerCase()}/notes`} className={`flex gap-2 mt-3 cursor-pointer transition-all duration-300 ${(location.pathname === `/${user?.firstName.toLowerCase()}/notes`) && 'bg-black/10 p-2 rounded-lg'}`}><img loading='lazy' src={StickyNoteIcon} alt="" /> Sticky Notes </Link>
 
         </div>
 
@@ -205,13 +217,13 @@ const Sidebar = ({ ExpandSidebar, setExpandSidebar, IsModbileSideberOpen, setIsM
             )}
           </div>
 
-          <button title='Create List' onClick={() => setCreateListModal(true)} className={`flex gap-2 mt-3 cursor-pointer transition-all duration-300`}> <img loading='lazy' src="../src/assets/icons/add.svg" alt="" /> Add New List</button>
+          <button title='Create List' onClick={() => setCreateListModal(true)} className={`flex gap-2 mt-3 cursor-pointer transition-all duration-300`}> <img loading='lazy' src={AddIcon} alt="" /> Add New List</button>
 
         </div>
 
         <div className="btns mt-7">
-          <button className={`flex gap-2 mt-3 cursor-pointer`}> <img loading='lazy' src="../src/assets/icons/settings.svg" alt="" /> Settings</button>
-          <button title='sign out' onClick={() => handleLogout()} className={`flex gap-2 mt-3 cursor-pointer`}> <img loading='lazy' src="../src/assets/icons/signout.svg" alt="" /> Sign out</button>
+          <button className={`flex gap-2 mt-3 cursor-pointer`}> <img loading='lazy' src={SettingsIcon} alt="" /> Settings</button>
+          <button title='sign out' onClick={() => handleLogout()} className={`flex gap-2 mt-3 cursor-pointer`}> <img loading='lazy' src={SignoutIcon} alt="" /> Sign out</button>
         </div>
 
         {createListModal && (

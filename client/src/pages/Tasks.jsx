@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useApp } from '../context/AppContext.jsx'
 
+import AddIcon from "../assets/icons/add.svg"
+
 const Tasks = () => {
 
     const { Todos, addTodo, updateTodo, updateTodoStatus, deleteTodo, todoInput, setTodoInput } = useApp();
@@ -40,7 +42,7 @@ const Tasks = () => {
 
                 {!editingTodoId && (<div className="taskInput relative">
                     <input onChange={(e) => handleChange(e)} value={todoInput} className='px-10 py-2 mt-3 border border-black rounded-lg w-full outline-none focus:ring-offset-0 focus:ring-2 focus:ring-green-400 transition-all duration-300' placeholder='Add new task' type="text" required />
-                    <img onClick={() => addTodo()} className='absolute left-2 top-5 cursor-pointer' loading='lazy' src="../src/assets/icons/add.svg" alt="" />
+                    <img onClick={() => addTodo()} className='absolute left-2 top-5 cursor-pointer' loading='lazy' src={AddIcon} alt="" />
                 </div>)}
 
                 {editingTodoId && (<div className="taskInput relative">
