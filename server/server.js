@@ -10,9 +10,15 @@ import eventRoutes from './routes/eventRoutes.js'
 import listRoutes from './routes/listRoutes.js'
 
 const app = express()
+// const port = process.env.PORT
 connectDB();
 
-app.use(cors())
+// CORS Middleware
+app.use(cors({
+    origin: process.env.CORS_ORIGIN || 'https://todopy-opal.vercel.app',
+    credentials: true, // Required for sending cookies
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+}));
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
@@ -24,5 +30,9 @@ app.use('/api/auth', authRoutes)
 app.use('/api/todo', todoRoutes)
 app.use('/api/event', eventRoutes)
 app.use('/api/list', listRoutes)
+
+// app.listen(port, () => {
+//     console.log(`Example app listening on http://127.0.0.1:${port}`)
+// })
 
 export default app;
