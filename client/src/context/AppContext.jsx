@@ -48,7 +48,6 @@ export const AppProvider = ({ children }) => {
             }, {
                 withCredentials: true
             });
-            console.log(response)
         } catch (error) {
             toast.error('Unable to update todo!');
         }
@@ -74,7 +73,6 @@ export const AppProvider = ({ children }) => {
             const response = await axios.delete(`${import.meta.env.VITE_API_URL}/todo/${id}`, {
                 withCredentials: true
             })
-            console.log(response)
         } catch (error) {
             toast.error('Unable to delete todo!');
         }
