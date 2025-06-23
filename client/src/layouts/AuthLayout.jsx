@@ -8,7 +8,7 @@ const AuthLayout = () => {
             <div className="leftSection w-full md:w-1/2 hidden lg:flex items-center justify-center">
                 <img
                     loading="lazy"
-                    src="/assets/heroImage.png"
+                    src="../src/assets/icons/heroImage.png"
                     alt="Hero"
                     className="w-full h-auto object-contain max-h-[400px] md:max-h-full"
                 />

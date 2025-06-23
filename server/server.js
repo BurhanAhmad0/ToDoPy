@@ -15,7 +15,7 @@ connectDB();
 
 // CORS Middleware
 app.use(cors({
-    origin: process.env.CORS_ORIGIN || 'https://todopy-opal.vercel.app',
+    origin: process.env.CORS_ORIGIN || 'http://localhost:5173/login',
     credentials: true, // Required for sending cookies
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }));
