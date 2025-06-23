@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useApp } from '../context/AppContext.jsx';
 
-import AddIcon from '"../assets/icons/add.svg"'
+import AddIcon from '../assets/icons/add.svg'
 
 const Upcoming = () => {
 
