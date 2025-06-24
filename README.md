@@ -1,3 +1,5 @@
+---
+
 ````markdown
 # ToDoPy
 
@@ -40,7 +42,7 @@ Follow the steps below to run ToDoPy locally.
 ### Prerequisites
 
 - Node.js and npm
-- MongoDB is installed and running
+- MongoDB installed and running
 - Git (optional)
 
 ### 1. Clone the Repository
