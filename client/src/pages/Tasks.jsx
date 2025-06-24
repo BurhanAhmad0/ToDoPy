@@ -89,7 +89,7 @@ const Tasks = () => {
                                         className="cursor-pointer w-5 h-5 border border-black rounded-sm peer-checked:bg-green-400 flex items-center justify-center"
                                     >
                                     </label>
-                                    <p className="peer-checked:line-through border border-red-400 w-lg text-nowrap">{todo.title}</p>
+                                    <p className="peer-checked:line-through w-lg text-nowrap">{todo.title}</p>
                                 </div>
 
                                 <div className="btns flex items-center gap-1">
