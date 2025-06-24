@@ -97,6 +97,18 @@
     background-color: #f0f9ff !important;
 }
 
+.noScrollbar {
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox, Safari 18.2+, Chromium 121+ */
+}
+
+.noScrollbar::-webkit-scrollbar {
+    display: none;
+    /* Older Safari and Chromium */
+}
+
 @media (width <=1024px) {
     .bgImage {
         background-image: url('../src/assets/icons/heroImage.png');
