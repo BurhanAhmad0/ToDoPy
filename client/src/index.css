@@ -99,7 +99,7 @@
 
 @media (width <=1024px) {
     .bgImage {
-        background-image: url('../public/assets/heroImage.png');
+        background-image: url('../src/assets/icons/heroImage.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
