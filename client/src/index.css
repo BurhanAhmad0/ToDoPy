@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @font-face {
     font-family: "Poppins";
@@ -95,6 +96,54 @@
 /* Today background highlight */
 .rbc-today {
     background-color: #f0f9ff !important;
+}
+
+/* ====================== */
+/* Dark Mode Enhancements */
+/* ====================== */
+
+.dark .custom-calendar-wrapper {
+    background-color: #1b4332;
+    color: #ffffff;
+}
+
+.dark .calendar-title {
+    color: #ffffff;
+}
+
+.dark .rbc-toolbar-label {
+    color: #ffffff;
+}
+
+.dark .rbc-btn-group button {
+    background-color: #2d6a4f;
+    color: #ffffff;
+}
+
+.dark .rbc-btn-group button:hover {
+    background-color: #40916c;
+}
+
+.dark .rbc-btn-group button.rbc-active {
+    background-color: #52b788;
+}
+
+.dark .rbc-event {
+    background-color: #95d5b2 !important;
+    color: #1b4332 !important;
+}
+
+.dark .rbc-event.red-event {
+    background-color: #f87171 !important;
+    color: white !important;
+}
+
+.dark .rbc-today {
+    background-color: #2d6a4f !important;
+}
+
+.dark .rbc-timeslot-group {
+    border-color: #3a5a40;
 }
 
 .noScrollbar {

@@ -5,7 +5,7 @@ import HeroImage from '../assets/icons/heroImage.png'
 
 const AuthLayout = () => {
     return (
-        <section className="authLayout bgImage bg-primary-background min-h-screen flex flex-col lg:flex-row gap-6 p-6 sm:p-10">
+        <section className="authLayout bgImage bg-primary-background dark:bg-black min-h-screen flex flex-col lg:flex-row gap-6 p-6 sm:p-10">
             {/* Left Section - Image */}
             <div className="leftSection w-full lg:w-1/2 hidden lg:flex justify-center items-center">
                 <img

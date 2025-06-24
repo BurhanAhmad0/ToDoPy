@@ -36,7 +36,7 @@ const ListPage = () => {
             {Loading ? (
                 <div>Loading...</div>
             ) : (
-                <section>
+                <section className="bg-sidebar-background dark:bg-green-900 text-black dark:text-white rounded-4xl p-6 h-full transition-all duration-300">
                     <div className="head flex items-center gap-3">
                         <div className={`w-8 h-8 rounded-full ${ListData.color}`}></div>
                         <h2 className='text-3xl font-extrabold'>{ListData.title}</h2>
@@ -57,7 +57,7 @@ const ListPage = () => {
                             </div>
                         ) : (
                             ListData.todos.map((todo) => (
-                                <div key={todo._id} className="tasks flex items-center justify-between h-12 border-b border-black">
+                                <div key={todo._id} className="tasks flex items-center justify-between h-12 border-b border-black dark:border-white">
                                     <div className="flex items-center gap-5">
                                         <input
                                             type="checkbox"
@@ -65,24 +65,24 @@ const ListPage = () => {
                                             checked={todo.completed}
                                             className="peer hidden"
                                         />
-
                                         <label
                                             htmlFor={`todo-${todo._id}`}
-                                            className="cursor-pointer w-5 h-5 border border-black rounded-sm peer-checked:bg-green-400 flex items-center justify-center"
+                                            className="cursor-pointer w-5 h-5 border border-black dark:border-white rounded-sm peer-checked:bg-green-400 flex items-center justify-center"
                                         >
                                         </label>
-                                        <p className="peer-checked:line-through">{todo.title}</p>
+                                        <p className="peer-checked:line-through dark:text-gray-300">{todo.title}</p>
                                     </div>
 
                                     <div className="btns flex items-center gap-1">
-                                        <button className='bg-btn px-10 py-2 rounded-sm cursor-pointer hover:bg-btn/60 transition-all duration-300' >Edit</button>
-                                        <button className='bg-btn px-10 py-2 rounded-sm cursor-pointer hover:bg-btn/60 transition-all duration-300' >Delete</button>
+                                        <button className='bg-btn px-10 py-2 rounded-sm cursor-pointer hover:bg-btn/60 transition-all duration-300 text-white'>Edit</button>
+                                        <button className='bg-btn px-10 py-2 rounded-sm cursor-pointer hover:bg-btn/60 transition-all duration-300 text-white'>Delete</button>
                                     </div>
                                 </div>
                             ))
                         )}
                     </div>
                 </section>
+
             )}
         </>
     )
