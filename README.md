@@ -1,7 +1,3 @@
-Certainly, Burhan. Below is a professional and comprehensive `README.md` file for your **ToDoPy** application, built with the **MERN stack**, **React Router**, **MongoDB**, and **Mongoose**.
-
----
-
 ````markdown
 # ToDoPy
 
