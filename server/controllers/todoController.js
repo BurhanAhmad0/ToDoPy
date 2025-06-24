@@ -66,7 +66,6 @@ const deleteTodo = async (req, res) => {
 
 const updateTodoStatus = async (req, res) => {
     try {
-        console.log(req.body, req.params)
         const { id } = req.params;
         const { completed } = req.body;
 

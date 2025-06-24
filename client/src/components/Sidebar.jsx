@@ -25,7 +25,7 @@ const Sidebar = ({ ExpandSidebar, setExpandSidebar, IsModbileSideberOpen, setIsM
 
   const location = useLocation();
   const navigate = useNavigate();
-  const { user, Loading } = useAuth();
+  const { user, setUser, Loading } = useAuth();
 
 
   const [Lists, dispatch] = useReducer(ListReducer, []);
@@ -40,7 +40,6 @@ const Sidebar = ({ ExpandSidebar, setExpandSidebar, IsModbileSideberOpen, setIsM
       ...ListTitleInput,
       [e.target.name]: e.target.value
     });
-    console.log(e.target.value);
   }
 
   const createList = async () => {
@@ -81,6 +80,7 @@ const Sidebar = ({ ExpandSidebar, setExpandSidebar, IsModbileSideberOpen, setIsM
       });
       navigate('/login')
       toast.success(response.data.message);
+      setUser(null)
     } catch (error) {
       console.error("Failed to logout:", error);
       toast.error("Logout failed. Please try again.");
@@ -95,8 +95,6 @@ const Sidebar = ({ ExpandSidebar, setExpandSidebar, IsModbileSideberOpen, setIsM
         });
         if (response.data.success) {
           dispatch({ type: 'SET_LISTS', lists: response.data.lists });
-        } else {
-          toast.error(response.data.message);
         }
       } catch (error) {
         console.error("Error fetching lists:", error);

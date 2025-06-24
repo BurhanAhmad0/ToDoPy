@@ -17,7 +17,6 @@ const ListPage = () => {
                 const response = await axios.get(`${import.meta.env.VITE_API_URL}/list/${id}`, {
                     withCredentials: true
                 });
-                console.log(response);
 
                 if (response.data.success) {
                     setListData(response.data.list);
