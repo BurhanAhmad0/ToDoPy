@@ -156,12 +156,3 @@
   display: none;
   /* Older Safari and Chromium */
 }
-
-@media (width <=1024px) {
-  .bgImage {
-    background-image: url("../src/assets/icons/heroImage.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-  }
-}
