@@ -2,100 +2,99 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @font-face {
-    font-family: "Poppins";
-    src: local("Poppins-Regular"),
-        url('./assets/fonts/Poppins/Poppins-Regular.ttf')
+  font-family: "Poppins";
+  src: local("Poppins-Regular"),
+    url("./assets/fonts/Poppins/Poppins-Regular.ttf");
 }
 
 @theme {
+  --font-primary: "Poppins", "sans-serif";
 
-    --font-primary: "Poppins", "sans-serif";
+  --color-btn: #76de37;
+  --color-primary-background: #c4c4c4;
+  --color-secondary-background: #fff9f9;
+  --color-sidebar-background: #f4f4f4;
+  --color-search-background: #ebebeb;
 
-    --color-btn: #76DE37;
-    --color-primary-background: #C4C4C4;
-    --color-secondary-background: #FFF9F9;
-    --color-sidebar-background: #F4F4F4;
-    --color-search-background: #EBEBEB;
+  --spacing-tasks-List: 573px;
 
-    --spacing-tasks-List: 573px;
-
-    --breakpoint-xsm: 400px;
+  --breakpoint-xsm: 400px;
 }
 
 * {
-    @apply font-primary
+  @apply font-primary;
 }
 
 /* Container styles */
 .custom-calendar-wrapper {
-    padding: 20px;
-    background-color: white;
+  padding: 20px;
+  background-color: white;
 }
 
 /* Title */
 .calendar-title {
-    font-size: 2rem;
-    font-weight: 700;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 /* Toolbar (Day, Week, Month) */
 .rbc-toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .rbc-toolbar-label {
-    font-size: 1.2rem;
-    font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .rbc-btn-group button {
-    background-color: #f3f4f6;
-    border: none;
-    margin: 0 4px;
-    padding: 6px 12px;
-    border-radius: 8px;
-    font-size: 0.875rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+  background-color: #f3f4f6;
+  border: none;
+  margin: 0 4px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .rbc-btn-group button:hover {
-    background-color: #e5e7eb;
+  background-color: #e5e7eb;
 }
 
 .rbc-btn-group button.rbc-active {
-    background-color: #d1d5db;
-    font-weight: 600;
+  background-color: #d1d5db;
+  font-weight: 600;
 }
 
 /* Time gutter */
 .rbc-timeslot-group {
-    border-color: #e6ebe5;
+  border-color: #e6ebe5;
 }
 
 /* Event styles */
 .rbc-event {
-    border: none;
-    border-radius: 10px;
-    padding: 4px 8px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #111827 !important;
-    background-color: #dbfee4 !important;
-    /* Light blue */
+  border: none;
+  border-radius: 10px;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #111827 !important;
+  background-color: #dbfee4 !important;
+  /* Light blue */
 }
 
 .rbc-event.red-event {
-    background-color: #fecaca !important;
-    /* Light red */
+  background-color: #fecaca !important;
+  /* Light red */
 }
 
 /* Today background highlight */
 .rbc-today {
-    background-color: #f0f9ff !important;
+  background-color: #f0f9ff !important;
 }
 
 /* ====================== */
@@ -103,66 +102,66 @@
 /* ====================== */
 
 .dark .custom-calendar-wrapper {
-    background-color: #1b4332;
-    color: #ffffff;
+  background-color: #1b4332;
+  color: #ffffff;
 }
 
 .dark .calendar-title {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .dark .rbc-toolbar-label {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .dark .rbc-btn-group button {
-    background-color: #2d6a4f;
-    color: #ffffff;
+  background-color: #2d6a4f;
+  color: #ffffff;
 }
 
 .dark .rbc-btn-group button:hover {
-    background-color: #40916c;
+  background-color: #40916c;
 }
 
 .dark .rbc-btn-group button.rbc-active {
-    background-color: #52b788;
+  background-color: #52b788;
 }
 
 .dark .rbc-event {
-    background-color: #95d5b2 !important;
-    color: #1b4332 !important;
+  background-color: #95d5b2 !important;
+  color: #1b4332 !important;
 }
 
 .dark .rbc-event.red-event {
-    background-color: #f87171 !important;
-    color: white !important;
+  background-color: #f87171 !important;
+  color: white !important;
 }
 
 .dark .rbc-today {
-    background-color: #2d6a4f !important;
+  background-color: #2d6a4f !important;
 }
 
 .dark .rbc-timeslot-group {
-    border-color: #3a5a40;
+  border-color: #3a5a40;
 }
 
 .noScrollbar {
-    -ms-overflow-style: none;
-    /* Internet Explorer 10+ */
-    scrollbar-width: none;
-    /* Firefox, Safari 18.2+, Chromium 121+ */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox, Safari 18.2+, Chromium 121+ */
 }
 
 .noScrollbar::-webkit-scrollbar {
-    display: none;
-    /* Older Safari and Chromium */
+  display: none;
+  /* Older Safari and Chromium */
 }
 
 @media (width <=1024px) {
-    .bgImage {
-        background-image: url('../src/assets/icons/heroImage.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-    }
+  .bgImage {
+    background-image: url("../src/assets/icons/heroImage.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
 }
