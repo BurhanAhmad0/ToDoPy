@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { user, Loading } = useAuth();
+  const { user, setUser, Loading } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,7 +28,9 @@ const Login = () => {
         }
       );
       if (response) {
-        navigate(`/${user?.firstName.toLowerCase()}`); // Redirect to user's home page
+        console.log(response);
+        setUser(response.data.user);
+        navigate(`/${response.data.user.firstName.toLowerCase()}`); // Redirect to user's home page
         toast.success("Login successful!");
       }
     } catch (error) {
