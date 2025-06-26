@@ -28,7 +28,6 @@ const Login = () => {
         }
       );
       if (response) {
-        console.log(response);
         setUser(response.data.user);
         navigate(`/${response.data.user.firstName.toLowerCase()}`); // Redirect to user's home page
         toast.success("Login successful!");
