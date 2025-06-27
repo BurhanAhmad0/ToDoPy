@@ -9,9 +9,12 @@ const AuthLayout = () => {
       {/* Left Section - Image */}
       <div className="leftSection w-full lg:w-1/2 flex justify-center items-center">
         <img
-          loading="lazy"
           src={HeroImage}
+          sizes="(max-width: 768px) 100vw, 50vw"
           alt="Hero Image"
+          fetchpriority="high"
+          width={1200}
+          height={800}
           className="w-full max-w-md md:max-w-lg lg:max-w-full h-auto object-contain"
         />
       </div>
