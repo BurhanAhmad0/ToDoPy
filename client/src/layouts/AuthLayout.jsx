@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-import HeroImage from "../assets/icons/heroImage.webp";
+import HeroImage from "../../public/icons/heroImage.webp";
 
 const AuthLayout = () => {
   return (
