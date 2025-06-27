@@ -1,7 +1,9 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-import HeroImage from "../../public/icons/heroImage.webp";
+import HeroImageLarge from "../../public/icons/heroImage.webp";
+import HeroImageSmall from "../../public/icons/heroImage-small.webp";
+import HeroImageMedium from "../../public/icons/heroImage-medium.webp";
 
 const AuthLayout = () => {
   return (
@@ -9,7 +11,12 @@ const AuthLayout = () => {
       {/* Left Section - Image */}
       <div className="leftSection w-full lg:w-1/2 flex justify-center items-center">
         <img
-          src={HeroImage}
+          src={HeroImageLarge}
+          srcSet={`
+            ${HeroImageSmall} 480w,
+            ${HeroImageMedium} 768w,
+            ${HeroImageLarge} 1200w
+          `}
           sizes="(max-width: 768px) 100vw, 50vw"
           alt="Hero Image"
           fetchpriority="high"
