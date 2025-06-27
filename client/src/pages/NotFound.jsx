@@ -10,7 +10,12 @@ const NotFound = () => {
 
   return (
     <section className="not-found w-full h-screen flex flex-col items-center justify-center">
-      <img className="w-96" loading="lazy" src={NotFoundImage} alt="" />
+      <img
+        className="w-96"
+        loading="lazy"
+        src={NotFoundImage}
+        alt="Not Found Image"
+      />
       <button
         onClick={() => navigate(`/${user?.firstName.toLowerCase()}`)}
         className="bg-[#59e4a8] w-52 py-4 rounded-lg mt-5 hover:bg-[#59e4a8]/80 cursor-pointer transition-all duration-300"

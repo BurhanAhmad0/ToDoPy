@@ -195,7 +195,7 @@ const Sidebar = ({
             className="invert-100  dark:invert-0 cursor-pointer"
             loading="lazy"
             src={HamburgerIcon}
-            alt=""
+            alt="Hamburger Icon"
           />
         </div>
 
@@ -211,7 +211,7 @@ const Sidebar = ({
             className="absolute left-2 top-5 dark:invert-100"
             loading="lazy"
             src={SearchIcon}
-            alt=""
+            alt="Search Icon"
           />
         </div>
 
@@ -238,7 +238,7 @@ const Sidebar = ({
                   className="dark:invert-100"
                   loading="lazy"
                   src={UpcomingIcon}
-                  alt=""
+                  alt="Upcoming Icon"
                 />{" "}
                 Upcoming
               </Link>
@@ -253,7 +253,7 @@ const Sidebar = ({
                   className="dark:invert-100"
                   loading="lazy"
                   src={TasksIcon}
-                  alt=""
+                  alt="Task Icon"
                 />{" "}
                 Tasks
               </Link>
@@ -268,7 +268,7 @@ const Sidebar = ({
                   className="dark:invert-100"
                   loading="lazy"
                   src={CalenderIcon}
-                  alt=""
+                  alt="Calender Icon"
                 />{" "}
                 Calender
               </Link>
@@ -283,7 +283,7 @@ const Sidebar = ({
                   className="dark:invert-100"
                   loading="lazy"
                   src={StickyNoteIcon}
-                  alt=""
+                  alt="Sticky Note Icon"
                 />{" "}
                 Sticky Notes
               </Link>
@@ -304,7 +304,7 @@ const Sidebar = ({
                   className="dark:invert-100"
                   loading="lazy"
                   src={UpcomingIcon}
-                  alt=""
+                  alt="Upcoming Icon"
                 />
               </Link>
               <Link
@@ -318,7 +318,7 @@ const Sidebar = ({
                   className="dark:invert-100"
                   loading="lazy"
                   src={TasksIcon}
-                  alt=""
+                  alt="Task Icon"
                 />
               </Link>
               <Link
@@ -332,7 +332,7 @@ const Sidebar = ({
                   className="dark:invert-100"
                   loading="lazy"
                   src={CalenderIcon}
-                  alt=""
+                  alt="Calender Icon"
                 />
               </Link>
               <Link
@@ -346,7 +346,7 @@ const Sidebar = ({
                   className="dark:invert-100"
                   loading="lazy"
                   src={StickyNoteIcon}
-                  alt=""
+                  alt="Sticky Note Icon"
                 />
               </Link>
             </>
@@ -403,7 +403,7 @@ const Sidebar = ({
               className="dark:invert-100"
               loading="lazy"
               src={AddIcon}
-              alt=""
+              alt="Add List Icon"
             />{" "}
             Add New List
           </button>
@@ -417,7 +417,7 @@ const Sidebar = ({
               className="dark:invert-100"
               loading="lazy"
               src={AddIcon}
-              alt=""
+              alt="Add List Icon"
             />
           </button>
         </div>
@@ -432,7 +432,7 @@ const Sidebar = ({
                   className="dark:invert-100"
                   loading="lazy"
                   src={SettingsIcon}
-                  alt=""
+                  alt="Settings Icon"
                 />{" "}
                 Settings
               </button>
@@ -441,10 +441,11 @@ const Sidebar = ({
                 className="flex gap-2 mt-3 cursor-pointer"
               >
                 <img
+                  title="Signout"
                   className="dark:invert-100"
                   loading="lazy"
                   src={SignoutIcon}
-                  alt=""
+                  alt="Signout Icon"
                 />{" "}
                 Sign out
               </button>
@@ -464,7 +465,8 @@ const Sidebar = ({
                 onClick={handleColorThemeMode}
                 className="hidden dark:flex gap-2 mt-3 cursor-pointer"
               >
-                <img loading="lazy" src={LightIcon} alt="" /> Light Mode
+                <img loading="lazy" src={LightIcon} alt="Change Theme Icon" />{" "}
+                Light Mode
               </button>
             </>
           )}
@@ -477,7 +479,7 @@ const Sidebar = ({
                   className="dark:invert-100"
                   loading="lazy"
                   src={SettingsIcon}
-                  alt=""
+                  alt="Settings Icon"
                 />
               </button>
               <button
@@ -485,10 +487,11 @@ const Sidebar = ({
                 className="flex gap-2 mt-3 cursor-pointer"
               >
                 <img
+                  title="Signout"
                   className="dark:invert-100"
                   loading="lazy"
                   src={SignoutIcon}
-                  alt=""
+                  alt="Signout"
                 />
               </button>
               <button
@@ -506,7 +509,7 @@ const Sidebar = ({
                 onClick={handleColorThemeMode}
                 className="hidden dark:flex gap-2 mt-3 cursor-pointer"
               >
-                <img loading="lazy" src={LightIcon} alt="" />
+                <img loading="lazy" src={LightIcon} alt="Change Theme Icon" />
               </button>
             </>
           )}
@@ -536,7 +539,7 @@ const Sidebar = ({
             className="cursor-pointer filter dark:invert-0"
             loading="lazy"
             src={HamburgerIcon}
-            alt="Close menu"
+            alt="Hamburger Icon"
           />
         </div>
 
@@ -551,7 +554,7 @@ const Sidebar = ({
             className="absolute left-2 top-3 filter dark:invert"
             loading="lazy"
             src={SearchIcon}
-            alt="Search"
+            alt="Search Icon"
           />
         </div>
 
@@ -571,7 +574,7 @@ const Sidebar = ({
               className="filter dark:invert"
               loading="lazy"
               src={UpcomingIcon}
-              alt="Upcoming"
+              alt="Upcoming Icon"
             />
             Upcoming
           </Link>
@@ -588,7 +591,7 @@ const Sidebar = ({
               className="filter dark:invert"
               loading="lazy"
               src={TasksIcon}
-              alt="Tasks"
+              alt="Tasks Icon"
             />
             Tasks
           </Link>
@@ -605,7 +608,7 @@ const Sidebar = ({
               className="filter dark:invert"
               loading="lazy"
               src={CalenderIcon}
-              alt="Calendar"
+              alt="Calendar Icon"
             />
             Calendar
           </Link>
@@ -622,7 +625,7 @@ const Sidebar = ({
               className="filter dark:invert"
               loading="lazy"
               src={StickyNoteIcon}
-              alt="Sticky Notes"
+              alt="Sticky Notes Icon"
             />
             Sticky Notes
           </Link>
@@ -659,7 +662,7 @@ const Sidebar = ({
               className="filter dark:invert"
               loading="lazy"
               src={AddIcon}
-              alt="Add List"
+              alt="Add List Icon"
             />
             Add New List
           </button>
@@ -672,7 +675,7 @@ const Sidebar = ({
               className="filter dark:invert"
               loading="lazy"
               src={SettingsIcon}
-              alt="Settings"
+              alt="Settings Icon"
             />
             Settings
           </button>
@@ -684,7 +687,7 @@ const Sidebar = ({
               className="filter dark:invert"
               loading="lazy"
               src={SignoutIcon}
-              alt="Sign Out"
+              alt="Signout Icon"
             />
             Sign out
           </button>
@@ -692,14 +695,20 @@ const Sidebar = ({
             onClick={handleColorThemeMode}
             className="flex gap-2 mt-3 cursor-pointer dark:hidden"
           >
-            <img className="invert-100" loading="lazy" src={DarkIcon} alt="" />{" "}
+            <img
+              className="invert-100"
+              loading="lazy"
+              src={DarkIcon}
+              alt="Change Theme Icon"
+            />{" "}
             Dark Mode
           </button>
           <button
             onClick={handleColorThemeMode}
             className="hidden dark:flex gap-2 mt-3 cursor-pointer"
           >
-            <img loading="lazy" src={LightIcon} alt="" /> Light Mode
+            <img loading="lazy" src={LightIcon} alt="Change Theme Icon" /> Light
+            Mode
           </button>
         </div>
 

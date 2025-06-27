@@ -11,7 +11,7 @@ const AuthLayout = () => {
         <img
           loading="lazy"
           src={HeroImage}
-          alt="Hero"
+          alt="Hero Image"
           className="w-full max-w-md md:max-w-lg lg:max-w-full h-auto object-contain"
         />
       </div>
