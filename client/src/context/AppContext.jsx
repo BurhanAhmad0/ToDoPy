@@ -5,6 +5,7 @@ import {
   useContext,
   useReducer,
 } from "react";
+import { useAuth } from "./AuthContext.jsx";
 import { toast } from "react-hot-toast";
 import { TodoReducer } from "../reducers/TodoReducer.jsx";
 import axios from "axios";
@@ -13,7 +14,11 @@ const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const initialState = [];
+
+  const { user } = useAuth();
+
   const [Todos, dispatch] = useReducer(TodoReducer, initialState);
+  const [loading, setLoading] = useState(false);
   const [todoInput, setTodoInput] = useState("");
 
   const addTodo = async () => {
@@ -102,6 +107,7 @@ export const AppProvider = ({ children }) => {
   useEffect(() => {
     const getTodos = async () => {
       try {
+        setLoading(true);
         const response = await axios.get(
           `${import.meta.env.VITE_API_URL}/todo`,
           {
@@ -117,17 +123,19 @@ export const AppProvider = ({ children }) => {
         } else {
           toast.error("Unable to fetch todos!");
         }
+        setLoading(false);
       } catch (error) {
         console.error(error);
       }
     };
 
     getTodos();
-  }, []);
+  }, [user]);
 
   const values = {
     addTodo,
     Todos,
+    loading,
     todoInput,
     setTodoInput,
     deleteTodo,

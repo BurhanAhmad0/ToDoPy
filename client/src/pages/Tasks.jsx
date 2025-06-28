@@ -6,6 +6,7 @@ const Tasks = () => {
   const {
     Todos,
     addTodo,
+    loading,
     updateTodo,
     updateTodoStatus,
     deleteTodo,
@@ -146,6 +147,8 @@ const Tasks = () => {
                 </text>
               </svg>
             </div>
+          ) : loading ? (
+            <div>Loading...</div>
           ) : (
             Todos.map((todo, index) => (
               <div
