@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "aos/dist/aos.css";
 @custom-variant dark (&:where(.dark, .dark *));
 
 @font-face {
@@ -102,7 +103,7 @@
 /* ====================== */
 
 .dark .custom-calendar-wrapper {
-  background-color: #1b4332;
+  background-color: #0d542b;
   color: #ffffff;
 }
 
@@ -115,7 +116,7 @@
 }
 
 .dark .rbc-btn-group button {
-  background-color: #2d6a4f;
+  background-color: #1c7943;
   color: #ffffff;
 }
 

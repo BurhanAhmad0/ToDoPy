@@ -10,11 +10,11 @@ const MainLayout = () => {
   const [IsModbileSideberOpen, setIsMobileSideberOpen] = useState(false);
 
   return (
-    <section className="relative p-10 flex gap-5 w-full dark:bg-btn">
+    <section className="relative lg:p-10 flex gap-5 w-full dark:bg-btn">
       {!IsModbileSideberOpen && (
         <img
           onClick={() => setIsMobileSideberOpen(true)}
-          className="invert-100 cursor-pointer absolute top-4 left-4 block lg:hidden"
+          className="cursor-pointer absolute top-4 left-4 block lg:hidden"
           loading="lazy"
           src={HamburgerIcon}
           alt="Hamburger Icon"

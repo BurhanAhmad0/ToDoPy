@@ -35,7 +35,7 @@ const Upcoming = () => {
   };
 
   return (
-    <section className="tasks h-full bg-sidebar-background dark:bg-green-900 text-black dark:text-white rounded-4xl p-6 transition-all duration-300">
+    <section className="tasks h-full py-14 px-3 lg:p-6 bg-sidebar-background dark:bg-green-900 text-black dark:text-white lg:rounded-4xl p-6 transition-all duration-300">
       <div className="head flex items-center gap-4">
         <h2 className="text-3xl font-extrabold">Upcoming</h2>
         <div className="count w-12 h-6 rounded-full border border-black dark:border-white flex items-center justify-center">

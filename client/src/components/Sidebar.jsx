@@ -188,7 +188,9 @@ const Sidebar = ({
               ExpandSidebar ? "block" : "hidden"
             } transition-all duration-300`}
           >
-            <Link to={`/${user?.firstName.toLowerCase()}`}>Menu</Link>
+            <Link title="Home" to={`/${user?.firstName.toLowerCase()}`}>
+              Menu
+            </Link>
           </h2>
           <img
             onClick={() => handleSidebarExpansion()}
@@ -427,7 +429,10 @@ const Sidebar = ({
           {/* Expanded Buttons */}
           {ExpandSidebar && (
             <>
-              <button className="flex gap-2 mt-3 cursor-pointer">
+              <button
+                title="Settings"
+                className="flex gap-2 mt-3 cursor-pointer"
+              >
                 <img
                   className="dark:invert-100"
                   loading="lazy"
@@ -437,11 +442,11 @@ const Sidebar = ({
                 Settings
               </button>
               <button
+                title="Signout"
                 onClick={handleLogout}
                 className="flex gap-2 mt-3 cursor-pointer"
               >
                 <img
-                  title="Signout"
                   className="dark:invert-100"
                   loading="lazy"
                   src={SignoutIcon}
@@ -450,6 +455,7 @@ const Sidebar = ({
                 Sign out
               </button>
               <button
+                title="Change Theme"
                 onClick={handleColorThemeMode}
                 className="flex gap-2 mt-3 cursor-pointer dark:hidden"
               >
@@ -462,6 +468,7 @@ const Sidebar = ({
                 Dark Mode
               </button>
               <button
+                title="Change Theme"
                 onClick={handleColorThemeMode}
                 className="hidden dark:flex gap-2 mt-3 cursor-pointer"
               >
@@ -474,7 +481,10 @@ const Sidebar = ({
           {/* Collapsed Buttons */}
           {!ExpandSidebar && (
             <>
-              <button className="flex gap-2 mt-3 cursor-pointer">
+              <button
+                title="Settings"
+                className="flex gap-2 mt-3 cursor-pointer"
+              >
                 <img
                   className="dark:invert-100"
                   loading="lazy"
@@ -483,6 +493,7 @@ const Sidebar = ({
                 />
               </button>
               <button
+                title="Signout"
                 onClick={handleLogout}
                 className="flex gap-2 mt-3 cursor-pointer"
               >
@@ -495,6 +506,7 @@ const Sidebar = ({
                 />
               </button>
               <button
+                title="Change Theme"
                 onClick={handleColorThemeMode}
                 className="flex gap-2 mt-3 cursor-pointer dark:hidden"
               >
@@ -506,6 +518,7 @@ const Sidebar = ({
                 />
               </button>
               <button
+                title="Change Theme"
                 onClick={handleColorThemeMode}
                 className="hidden dark:flex gap-2 mt-3 cursor-pointer"
               >
@@ -536,7 +549,7 @@ const Sidebar = ({
           </h2>
           <img
             onClick={() => setIsMobileSideberOpen(false)}
-            className="cursor-pointer filter dark:invert-0"
+            className="cursor-pointer filter invert-100 dark:invert-0"
             loading="lazy"
             src={HamburgerIcon}
             alt="Hamburger Icon"
@@ -670,7 +683,7 @@ const Sidebar = ({
 
         {/* Settings & Signout */}
         <div className="btns mt-7">
-          <button className="flex gap-2 mt-3 items-center">
+          <button title="Settings" className="flex gap-2 mt-3 items-center">
             <img
               className="filter dark:invert"
               loading="lazy"
@@ -680,6 +693,7 @@ const Sidebar = ({
             Settings
           </button>
           <button
+            title="Signout"
             onClick={() => handleLogout()}
             className="flex gap-2 mt-3 items-center"
           >
@@ -692,6 +706,7 @@ const Sidebar = ({
             Sign out
           </button>
           <button
+            title="Change Theme"
             onClick={handleColorThemeMode}
             className="flex gap-2 mt-3 cursor-pointer dark:hidden"
           >
@@ -704,6 +719,7 @@ const Sidebar = ({
             Dark Mode
           </button>
           <button
+            title="Change Theme"
             onClick={handleColorThemeMode}
             className="hidden dark:flex gap-2 mt-3 cursor-pointer"
           >
