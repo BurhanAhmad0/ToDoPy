@@ -14,7 +14,7 @@ const MainLayout = () => {
       {!IsModbileSideberOpen && (
         <img
           onClick={() => setIsMobileSideberOpen(true)}
-          className="cursor-pointer absolute top-4 left-4 block lg:hidden"
+          className="cursor-pointer absolute top-4 left-4 block lg:hidden invert-100 dark:invert-0"
           loading="lazy"
           src={HamburgerIcon}
           alt="Hamburger Icon"
