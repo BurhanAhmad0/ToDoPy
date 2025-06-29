@@ -58,11 +58,10 @@ const registerUser = async (req, res) => {
       from: `"Codiqon Support" <${process.env.SENDER_EMAIL}>`, // Replace with your verified Brevo sender email
       to: email, // Recipient's email address
       subject: "Welcome to Codiqon",
-      text: "Dear User,\n\nWelcome to Codiqon! Your account has been created successfully. We're excited to have you with us.\n\nBest regards,\nThe Codiqon Team",
       html: `
     <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
       <h1 style="color: #2c3e50;">Welcome to Codiqon</h1>
-      <p>Dear User,</p>
+      <p>Dear ${newUser.firstName},</p>
       <p>We’re excited to welcome you to Codiqon! Your account has been created successfully.</p>
       <p>If you have any questions or need assistance, feel free to reach out to our support team.</p>
       <p>Best regards,<br>The Codiqon Team</p>
