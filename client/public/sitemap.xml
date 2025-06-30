@@ -1,16 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- Created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-
-<url>
-  <loc>https://todopy-opal.vercel.app/</loc>
-  <lastmod>2025-06-27T08:36:43+00:00</lastmod>
-</url>
-
+  <url>
+    <loc>https://todopyapp.vercel.app/</loc>
+    <lastmod>2025-06-30T06:36:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://todopyapp.vercel.app/about</loc>
+    <lastmod>2025-06-30T06:36:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://todopyapp.vercel.app/contact</loc>
+    <lastmod>2025-06-30T06:36:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://todopyapp.vercel.app/privacy</loc>
+    <lastmod>2025-06-30T06:36:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://todopyapp.vercel.app/terms</loc>
+    <lastmod>2025-06-30T06:36:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://todopyapp.vercel.app/support</loc>
+    <lastmod>2025-06-30T06:36:45+00:00</lastmod>
+  </url>
 
 </urlset>
