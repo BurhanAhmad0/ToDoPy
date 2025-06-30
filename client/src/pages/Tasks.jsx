@@ -38,7 +38,7 @@ const Tasks = () => {
   return (
     <section className="tasks h-screen py-14 px-3 lg:p-6 lg:h-full bg-sidebar-background dark:bg-green-900 text-black dark:text-white lg:rounded-4xl transition-all duration-300">
       <div className="head flex items-center gap-4">
-        <h2 className="text-3xl font-extrabold">Tasks</h2>
+        <h1 className="text-3xl font-extrabold">Tasks</h1>
         <div className="count w-12 h-6 rounded-full border border-black dark:border-white flex items-center justify-center">
           {Todos.length}
         </div>

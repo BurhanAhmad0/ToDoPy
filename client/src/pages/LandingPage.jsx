@@ -8,7 +8,7 @@ const LandingPage = () => {
 
   return (
     <section className="landingpage">
-      <h2 className="text-5xl font-extrabold text-center">ToDoPy</h2>
+      <h1 className="text-5xl font-extrabold text-center">ToDoPy</h1>
       <p className="mt-5">
         Stay Organized, Get Things Done: Your Ultimate To-Do List App. <br /> A
         todo list app is a digital task management tool designed to help users

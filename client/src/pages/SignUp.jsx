@@ -51,7 +51,7 @@ const SignUp = () => {
 
   return (
     <section className="signup">
-      <h2 className="text-3xl font-extrabold">Sign up</h2>
+      <h1 className="text-3xl font-extrabold">Sign up</h1>
 
       <form onSubmit={handleSubmit}>
         <input

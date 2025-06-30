@@ -93,7 +93,7 @@ const CalendarPage = () => {
     <>
       <div className="h-full py-14 px-3 lg:p-6">
         <div className="flex justify-between items-center py-2">
-          <h2 className="calendar-title">{todayFormatted}</h2>
+          <h1 className="calendar-title">{todayFormatted}</h1>
           <button
             onClick={() => setAddEvent(true)}
             className="add-event-button dark:text-white bg-btn dark:bg-green-900 w-32 py-2 rounded-lg hover:bg-btn/80 hover:dark:bg-green-900/80 cursor-pointer transition-all duration-300'"

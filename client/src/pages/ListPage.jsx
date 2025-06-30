@@ -41,7 +41,7 @@ const ListPage = () => {
         <section className="bg-sidebar-background dark:bg-green-900 text-black dark:text-white lg:rounded-4xl py-16 px-8 lg:p-6 transition-all duration-300 h-screen lg:h-full">
           <div className="head flex items-center gap-3">
             <div className={`w-8 h-8 rounded-full ${ListData.color}`}></div>
-            <h2 className="text-3xl font-extrabold">{ListData.title}</h2>
+            <h1 className="text-3xl font-extrabold">{ListData.title}</h1>
           </div>
 
           <div className="taskList mt-5 h-4/5 overflow-y-auto">

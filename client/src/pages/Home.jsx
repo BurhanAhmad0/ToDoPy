@@ -8,7 +8,7 @@ const Home = () => {
 
   return (
     <section className="home bg-sidebar-background dark:bg-green-900 text-black dark:text-white w-full h-full xsm:h-screen lg:h-full lg:rounded-4xl flex flex-col items-center justify-center py-16 lg:py-10 px-8 lg:px-28 transition-all duration-300">
-      <h2 className="text-5xl font-extrabold">Welcome to ToDoPy</h2>
+      <h1 className="text-5xl font-extrabold">Welcome to ToDoPy</h1>
       <p className="mt-10 text-gray-700 dark:text-gray-300 text-center max-w-3xl">
         A to-do app is a simple, user-friendly digital tool designed to help
         individuals and teams organize tasks and manage their daily activities

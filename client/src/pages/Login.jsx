@@ -40,7 +40,7 @@ const Login = () => {
 
   return (
     <section className="login">
-      <h2 className="text-3xl font-extrabold">Login</h2>
+      <h1 className="text-3xl font-extrabold">Login</h1>
 
       <form onSubmit={(e) => handleSubmit(e)}>
         <input
