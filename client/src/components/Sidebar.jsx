@@ -77,9 +77,7 @@ const Sidebar = ({
 
       setCreateListModal(false);
       setListTitleInput({ ListTitle: "", color: "bg-green-400" });
-    } catch (error) {
-      console.error("Error creating list:", error);
-    }
+    } catch (error) {}
   };
 
   const handleLogout = async () => {
