@@ -20,7 +20,7 @@ const AuthLayout = () => {
           `}
             sizes="(max-width: 768px) 100vw, 50vw"
             alt="Hero Image"
-            fetchpriority="high"
+            fetchPriority="high"
             width={1200}
             height={800}
             className="w-full max-w-md md:max-w-lg lg:max-w-full h-auto object-contain"

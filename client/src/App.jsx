@@ -26,33 +26,40 @@ const Footer = React.lazy(() => import("./components/Footer.jsx"));
 const App = () => {
   return (
     <>
-      <Suspense fallback={<HomeSkeleton />}>
-        <Routes>
-          <Route path="/" element={<AuthLayout />}>
-            <Route index element={<LandingPage />} />
-            <Route path="login" element={<Login />} />
-            <Route path="signup" element={<SignUp />} />
+      <Routes>
+        {/* Public Routes */}
+        <Route path="/" element={<AuthLayout />}>
+          <Route index element={<LandingPage />} />
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<SignUp />} />
+        </Route>
+
+        {/* Protected Routes wrapped in Suspense with HomeSkeleton fallback */}
+        <Route
+          element={
+            <ProtectedRoutes>
+              <Suspense fallback={<HomeSkeleton />} />
+            </ProtectedRoutes>
+          }
+        >
+          <Route path="/:username" element={<MainLayout />}>
+            <Route index element={<Home />} />
+            <Route path="upcoming" element={<Upcoming />} />
+            <Route path="calender" element={<Calender />} />
+            <Route path="tasks" element={<Tasks />} />
+            <Route path="list/:id" element={<ListPage />} />
           </Route>
+        </Route>
 
-          <Route element={<ProtectedRoutes />}>
-            <Route path="/:username" element={<MainLayout />}>
-              <Route index element={<Home />} />
-              <Route path="upcoming" element={<Upcoming />} />
-              <Route path="calender" element={<Calender />} />
-              <Route path="tasks" element={<Tasks />} />
-              <Route path="list/:id" element={<ListPage />} />
-            </Route>
-          </Route>
+        {/* Static routes */}
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
 
-          <Route path="*" element={<NotFound />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-
-        <Footer />
-      </Suspense>
+      <Footer />
     </>
   );
 };

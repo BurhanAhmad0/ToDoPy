@@ -17,11 +17,16 @@ export const AppProvider = ({ children }) => {
 
   const { user } = useAuth();
 
+  const [LoadingAddRequest, setLoadingAddRequest] = useState(false);
+  const [page, setPage] = useState(1); // Current page
+  const [totalPages, setTotalPages] = useState(1); // Total pages
+  const limit = 8; // Items per page
   const [Todos, dispatch] = useReducer(TodoReducer, initialState);
   const [loading, setLoading] = useState(false);
   const [todoInput, setTodoInput] = useState("");
 
   const addTodo = async () => {
+    setLoadingAddRequest(true);
     try {
       if (todoInput.length === 0) return;
 
@@ -45,8 +50,9 @@ export const AppProvider = ({ children }) => {
 
       setTodoInput("");
       toast.success("Todo added successfully!");
+      setLoadingAddRequest(false);
     } catch (error) {
-      toast.error("Unable to add todo!");
+      setLoadingAddRequest(false);
     }
   };
 
@@ -109,7 +115,7 @@ export const AppProvider = ({ children }) => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `${import.meta.env.VITE_API_URL}/todo`,
+          `${import.meta.env.VITE_API_URL}/todo?page=${page}&limit=${limit}`,
           {
             withCredentials: true,
             headers: {
@@ -119,18 +125,20 @@ export const AppProvider = ({ children }) => {
         );
 
         if (response.data.success) {
+          setTotalPages(response.data.totalPages);
           dispatch({ type: "SET_TODOS", todos: response.data.todos });
         } else {
+          setLoading(false);
           toast.error("Unable to fetch todos!");
         }
         setLoading(false);
       } catch (error) {
-        console.error(error);
+        setLoading(false);
       }
     };
 
     getTodos();
-  }, [user]);
+  }, [user, page]);
 
   const values = {
     addTodo,
@@ -141,6 +149,11 @@ export const AppProvider = ({ children }) => {
     deleteTodo,
     updateTodo,
     updateTodoStatus,
+    setPage,
+    page,
+    totalPages,
+    LoadingAddRequest,
+    setLoadingAddRequest,
   };
 
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;

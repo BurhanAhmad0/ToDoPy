@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
 import toast from "react-hot-toast";
+import SignupFormComponent from "../components/SignupFormComponent.jsx";
 
 const SignUp = () => {
+  const [LoadingSignupRequest, setLoadingSignupRequest] = useState(false);
+
   const navigate = useNavigate();
   const { user, setUser, Loading } = useAuth();
 
   const handleSubmit = async (e) => {
+    setLoadingSignupRequest(true);
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
@@ -39,12 +43,13 @@ const SignUp = () => {
         }
       );
       if (response) {
+        setLoadingSignupRequest(false);
         setUser(response.data.user);
         navigate(`/${response.data.user.firstName.toLowerCase()}`); // Redirect to user's home page
         toast.success("Sign up successful!");
       }
     } catch (error) {
-      console.error("Failed to sign up:", error);
+      setLoadingSignupRequest(false);
       toast.error("Sign up failed. Please try again.");
     }
   };
@@ -53,49 +58,10 @@ const SignUp = () => {
     <section className="signup">
       <h1 className="text-3xl font-extrabold">Sign up</h1>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          className="border outline-none p-1 px-4 h-10 rounded-md mt-5 w-full focus:ring-offset-0 focus:ring-2 focus:ring-green-400 transition-all"
-          type="text"
-          placeholder="First Name"
-          name="firstName"
-          required
-        />
-        <input
-          className="border outline-none p-1 px-4 h-10 rounded-md mt-5 w-full focus:ring-offset-0 focus:ring-2 focus:ring-green-400 transition-all"
-          type="text"
-          placeholder="Last Name"
-          name="lastName"
-          required
-        />
-        <input
-          className="border outline-none p-1 px-4 h-10 rounded-md mt-5 w-full focus:ring-offset-0 focus:ring-2 focus:ring-green-400 transition-all"
-          type="email"
-          placeholder="example@gmail.com"
-          name="email"
-          required
-        />
-        <input
-          className="border outline-none p-1 px-4 h-10 rounded-md mt-5 w-full focus:ring-offset-0 focus:ring-2 focus:ring-green-400 transition-all"
-          type="password"
-          placeholder="**************"
-          name="password"
-          required
-        />
-        <input
-          className="border outline-none p-1 px-4 h-10 rounded-md mt-5 w-full focus:ring-offset-0 focus:ring-2 focus:ring-green-400 transition-all"
-          type="password"
-          placeholder="**************"
-          name="confirmPassword"
-          required
-        />
-        <button
-          type="submit"
-          className="bg-btn dark:text-black w-full py-2 rounded-lg mt-5 hover:bg-btn/80 cursor-pointer transition-all duration-300"
-        >
-          Sign up
-        </button>
-      </form>
+      <SignupFormComponent
+        handleSubmit={handleSubmit}
+        LoadingSignupRequest={LoadingSignupRequest}
+      />
 
       <p className="mt-5">
         Aleady have an account?{" "}

@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext.jsx";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import LoginFormComponent from "../components/LoginFormComponent.jsx";
 
 const Login = () => {
+  const [LoginRequestLoading, setLoginRequestLoading] = useState(false);
+
   const navigate = useNavigate();
   const { user, setUser, Loading } = useAuth();
 
   const handleSubmit = async (e) => {
+    setLoginRequestLoading(true);
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
@@ -28,12 +32,13 @@ const Login = () => {
         }
       );
       if (response) {
+        setLoginRequestLoading(false);
         setUser(response.data.user);
         navigate(`/${response.data.user.firstName.toLowerCase()}`); // Redirect to user's home page
         toast.success("Login successful!");
       }
     } catch (error) {
-      console.error("Failed to login:", error);
+      setLoginRequestLoading(false);
       toast.error("Login failed. Please try again.");
     }
   };
@@ -42,25 +47,10 @@ const Login = () => {
     <section className="login">
       <h1 className="text-3xl font-extrabold">Login</h1>
 
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <input
-          className="border outline-none p-1 px-4 h-10 rounded-md mt-5 w-full focus:ring-offset-0 focus:ring-2 focus:ring-green-400 transition-all"
-          type="email"
-          placeholder="example@gmail.com"
-          name="email"
-          required
-        />
-        <input
-          className="border outline-none p-1 px-4 h-10 rounded-md mt-5 w-full focus:ring-offset-0 focus:ring-2 focus:ring-green-400 transition-all"
-          type="password"
-          placeholder="**************"
-          name="password"
-          required
-        />
-        <button className="bg-btn dark:text-black w-full py-2 rounded-lg mt-5 hover:bg-btn/80 cursor-pointer transition-all duration-300">
-          Login
-        </button>
-      </form>
+      <LoginFormComponent
+        handleSubmit={handleSubmit}
+        LoginRequestLoading={LoginRequestLoading}
+      />
 
       <p className="mt-5">
         Don't have have an account?{" "}
