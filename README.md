@@ -160,7 +160,7 @@ ToDoPy/
 ## 👨‍💻 Author
 
 **Burhan Ahmad**  
-[GitHub](https://github.com/BurhanAhmad0) · [LinkedIn](https://linkedin.com/in/burhan-developer)
+[GitHub](https://github.com/BurhanAhmad0) · [LinkedIn](https://www.linkedin.com/in/burhan-developer/)
 
 Feel free to connect or contribute!
 
