@@ -1,14 +1,18 @@
-<h1>📝 ToDoPy</h1>
+# 📝 ToDoPy
 
-<p>
-  <strong>A full-featured MERN stack To-Do app using React Router, MongoDB, Mongoose, and Express.js.</strong><br/>
-  Efficiently manage your daily tasks with a clean UI and robust backend.
-</p>
+A modern fullstack To-Do & productivity app built with React, Node.js, and MongoDB. 🔒 Features user authentication, ✅ task management, 📱 responsive design, and a clean, intuitive UI. 🚀
 
 <p align="end">
-  <img src="https://img.shields.io/badge/Stack-MERN-green?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Stack-Fullstack-green?style=flat-square"/>
   <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square"/>
   <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square"/>
+</p>
+
+<p align="center">
+  <img src="https://em-content.zobj.net/source/microsoft-teams/363/rocket_1f680.png" alt="Rocket" width="48" />
+  <img src="https://em-content.zobj.net/source/microsoft-teams/363/sparkles_2728.png" alt="Sparkles" width="48" />
+  <img src="https://em-content.zobj.net/source/microsoft-teams/363/handshake_1f91d.png" alt="Handshake" width="48" />
+  <img src="https://em-content.zobj.net/source/microsoft-teams/363/heart-hands_1faf6.png" alt="Heart Hands" width="48" />
 </p>
 
 ---
@@ -17,10 +21,15 @@
 
 - ✅ Add, edit, and delete tasks
 - 📌 Mark tasks as complete or incomplete
+- 🔒 User authentication (JWT, protected routes)
 - 🧠 Persistent data using MongoDB
 - 📡 RESTful API integration
 - 🌐 Client-side routing with React Router
-- 📱 Fully responsive design
+- 📱 Fully responsive & modern UI
+- 🌙 Dark mode
+- 🗂️ Task lists & categories
+- 🔔 Reminders & due dates (planned)
+- ⚡ Fast Vite-powered frontend
 
 ---
 
@@ -29,9 +38,10 @@
 ### 🖥️ Frontend
 
 - [React.js](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
 - [React Router](https://reactrouter.com/)
 - [Axios](https://axios-http.com/)
-- CSS (or Tailwind/Bootstrap, if applicable)
+- CSS Modules
 
 ### 🗄️ Backend
 
@@ -56,9 +66,9 @@ Follow the steps below to run **ToDoPy** locally.
 ### 📁 Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/todopy.git
-cd todopy
-````
+git clone https://github.com/BurhanAhmad0/ToDoPy.git
+cd ToDoPy
+```
 
 ---
 
@@ -89,36 +99,44 @@ npm run dev
 ```bash
 cd ../client
 npm install
-npm start
+npm run dev
 ```
 
-The React app should be available at `http://localhost:3000`.
+The React app should be available at `http://localhost:5173` (default Vite port).
 
 ---
 
 ## 🧭 Folder Structure
 
 ```bash
-todopy/
-├── client/         # React frontend
+ToDoPy/
+├── client/         # React frontend (Vite)
+│   ├── public/
 │   └── src/
 │       ├── components/
+│       ├── context/
+│       ├── layouts/
 │       ├── pages/
-│       ├── App.js
-│       └── index.js
+│       ├── reducers/
+│       ├── assets/
+│       └── App.jsx
 ├── server/         # Express backend
+│   ├── configs/
+│   ├── controllers/
+│   ├── middlewares/
 │   ├── models/
 │   ├── routes/
-│   ├── controllers/
 │   └── server.js
-└── README.md
+├── .github/
+├── README.md
+└── ...
 ```
 
 ---
 
-## 📡 API Endpoints
+## 📡 API Endpoints (Example)
 
-**Base URL:** `/api/todos`
+**Base URL:** `/api/todo`
 
 | Method | Endpoint | Description         |
 | ------ | -------- | ------------------- |
@@ -131,18 +149,19 @@ todopy/
 
 ## ✨ Future Improvements
 
-* 🔐 User authentication with JWT
-* ⏰ Due dates & reminders
-* 📊 Task categories and filters
-* 🌙 Dark mode toggle
-* 📱 PWA (Progressive Web App) support
+- ⏰ Due dates & reminders
+- 📊 Task categories and filters
+- 🌙 Dark mode toggle
+- 📱 PWA (Progressive Web App) support
+- 🧩 Integrations (Google Calendar, etc.)
 
 ---
 
 ## 👨‍💻 Author
 
-**Burhan Ahmad**
+**Burhan Ahmad**  
 [GitHub](https://github.com/BurhanAhmad0) · [LinkedIn](https://linkedin.com/in/burhan-ahmad-developer)
+
 Feel free to connect or contribute!
 
 ---
@@ -153,4 +172,19 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 ---
 
-> Built with ❤️ using the MERN Stack
+---
+
+## 🏷️ Topics
+
+todo • productivity • task-manager • react • nodejs • express • mongodb • fullstack • webapp • vite • authentication • jwt • context-api • hooks • modern-ui • responsive-design • pwa • vercel • project-management • open-source
+
+---
+
+<p align="center">
+  <img src="https://em-content.zobj.net/source/microsoft-teams/363/rocket_1f680.png" alt="Rocket" width="40" />
+  <img src="https://em-content.zobj.net/source/microsoft-teams/363/sparkles_2728.png" alt="Sparkles" width="40" />
+  <img src="https://em-content.zobj.net/source/microsoft-teams/363/handshake_1f91d.png" alt="Handshake" width="40" />
+  <img src="https://em-content.zobj.net/source/microsoft-teams/363/heart-hands_1faf6.png" alt="Heart Hands" width="40" />
+</p>
+
+> Built with ❤️ by Burhan Ahmad using the modern fullstack ecosystem

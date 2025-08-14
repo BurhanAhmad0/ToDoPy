@@ -7,10 +7,60 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Dependency directories
+node_modules/
+
+# Build output
+client/dist/
+client/dist-ssr/
+server/dist/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Local env files
+client/.env
+server/.env
+.env
+.env.*
+
+# Editor directories and files
+.vscode/
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+Thumbs.db
+
+# Misc
 *.local
+coverage/
+
+# Ignore lock files (optional, if you use only one package manager, remove others)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore test output
+*.test.js.snap
+
+# Ignore next.js build output (if ever used)
+.next/
+
+# Ignore vercel build output
+.vercel/
 
 # Editor directories and files
 .vscode/*
